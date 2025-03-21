@@ -1,0 +1,24 @@
+$amarelo: #ffe59a;
+$amarelo-escuro: #ffcc33;
+$cinza: #333333;
+$branco: #cccccc;
+$vermelho: #ff5f57;
+$azul-escuro: #85ccff;
+$azul-claro: #ecf7ff;
+$verde: #27c93f;
+
+@mixin response($tamanho) {
+    @if $tamanho == "big" {
+        @media all and (max-width: 61.9375em) {
+            @content;
+        }
+    } @else if $tamanho == big-small {
+        @media all and (max-width: 47.9375em) {
+            @content;
+        }
+    } @else if $tamanho == medium {
+        @media all and (max-width: 30em) {
+            @content;
+        }
+    }
+}

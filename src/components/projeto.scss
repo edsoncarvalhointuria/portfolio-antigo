@@ -1,0 +1,134 @@
+@import "../abstract/abstract";
+.projetos {
+    &__item {
+        border-radius: 1rem;
+        height: 28rem;
+        overflow: hidden;
+        position: relative;
+        display: grid;
+        transition: all 0.4s ease;
+        grid-template-rows: 9% 61% 30%;
+        animation: flutuando 8s ease-in-out infinite;
+        text-decoration: none;
+        user-select: none;
+        cursor: pointer;
+
+        @include response(big-small) {
+            height: 40rem;
+        }
+        @include response(medium) {
+            height: 30rem;
+        }
+
+        &:hover {
+            border-radius: 3rem;
+
+            & .projetos {
+                &__item-header {
+                    background-color: $azul-escuro;
+                }
+
+                &__item-body {
+                    border: 4px solid $azul-escuro;
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+
+                &__item-footer {
+                    background-color: $azul-escuro;
+                }
+            }
+        }
+
+        &:nth-of-type(even) {
+            top: 7%;
+            animation: flutuando-y 8s ease-in-out infinite;
+            @include response(medium) {
+                top: 0;
+            }
+        }
+
+        &-header {
+            transition: all 0.4s ease;
+            background-color: $azul-claro;
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            justify-content: right;
+            padding-right: 2rem;
+            cursor: grab;
+
+            &:active {
+                cursor: grabbing;
+            }
+
+            &--vermelho {
+                border-radius: 50%;
+                background-color: $vermelho;
+                height: 1rem;
+                width: 1rem;
+            }
+
+            &--amarelo {
+                border-radius: 50%;
+                background-color: #ffbd2e;
+                height: 1rem;
+                width: 1rem;
+            }
+
+            &--verde {
+                border-radius: 50%;
+                background-color: $verde;
+                height: 1rem;
+                width: 1rem;
+            }
+        }
+
+        &-body {
+            background-position: 50% 0%;
+            background-size: 100%;
+            position: relative;
+            z-index: -1;
+            border: 4px solid $azul-claro;
+            transition: all 0.4s ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 110%;
+                width: 100%;
+                z-index: 1;
+                top: 0;
+                bottom: 0;
+                opacity: 0;
+                backdrop-filter: blur(3px);
+                background: url("https://www.svgrepo.com/show/12044/eye.svg");
+                background-size: 20%;
+                background-repeat: no-repeat;
+                background-position: 50%;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        &-footer {
+            background-color: $azul-claro;
+            padding: 1rem;
+            display: grid;
+            transition: all 0.4s ease;
+        }
+
+        &-titulo {
+            font-weight: bold;
+        }
+
+        &-desc {
+            font-size: 1.4rem;
+        }
+
+        & img {
+            align-self: flex-start;
+        }
+    }
+}

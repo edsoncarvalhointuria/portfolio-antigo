@@ -1,0 +1,513 @@
+@import "../abstract/abstract";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font: inherit;
+    min-height: 0;
+}
+
+img,
+iframe,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    font-size: 62.5%;
+    scrollbar-width: thin;
+    position: relative;
+
+    @media all and (max-width: 47.9375em) {
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    scroll-behavior: smooth;
+    line-height: 1;
+    font-size: 1.6rem;
+    overflow-x: hidden;
+
+    &.pj {
+        overflow: hidden;
+    }
+}
+
+main {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero {
+    box-shadow: inset 0px -64px 40px 0px white;
+    background-image: url("/nuvens.jpg");
+    background-position: 50%;
+    animation: nuvens 99s linear 0.1s infinite;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100dvh;
+
+    position: relative;
+    display: grid;
+    place-items: center;
+    place-content: center;
+    gap: 3.5rem;
+
+    &::after {
+        content: "";
+        background-image: url("/ruido.png");
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        opacity: 0.3;
+        animation: ruido 0.1s infinite linear;
+    }
+
+    &__h1 {
+        font-size: 3.2rem;
+        font-weight: bold;
+        text-shadow: 0 0 1rem white;
+        z-index: 2;
+
+        @include response(medium) {
+            font-size: 3.2rem;
+        }
+        & span {
+            opacity: 0;
+            display: inline-block;
+            animation: letters 0.5s forwards ease;
+        }
+    }
+
+    &__subtitulo {
+        text-shadow: 0 0 1rem white;
+        z-index: 2;
+        font-size: 1.6rem;
+        font-weight: 600;
+        & span {
+            opacity: 0;
+            display: inline-block;
+            animation: letters 0.5s forwards ease;
+        }
+    }
+
+    &__botao {
+        z-index: 2;
+        background-color: $amarelo-escuro; /* Amarelo pastel */
+        color: $cinza;
+        padding: 1.2rem 2.4rem;
+        border: none;
+        border-radius: 1rem;
+        font-size: 1.6rem;
+        font-weight: bold;
+        transition: all 0.4s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $amarelo;
+            transform: scale(1.05);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+.sobre {
+    box-shadow: 0px 35px 38px 10px white;
+    background-color: white;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-image: url("/ruido.png");
+        display: block;
+        opacity: 0.3;
+        z-index: 1;
+        animation: ruido 0.1s infinite linear;
+    }
+
+    &__container {
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 3rem;
+        transform: translateX(100%);
+        transition: all 0.8s ease-in;
+
+        @include response(big) {
+            padding: 2rem;
+            gap: 1rem;
+        }
+
+        @include response(medium) {
+            display: grid;
+            place-items: center;
+            place-content: center;
+        }
+    }
+
+    &__img {
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 30rem;
+        transform: translateY(3rem);
+        @include response(big) {
+            width: 20rem;
+            transform: translateY(2rem);
+        }
+
+        @include response(medium) {
+            display: none;
+        }
+
+        &.mobile {
+            display: none;
+            @include response(medium) {
+                display: block;
+                transform: none;
+            }
+        }
+    }
+
+    &__aviao {
+        width: 20rem;
+        rotate: -15deg;
+        position: absolute;
+        transition: all ease-in 0.4s;
+    }
+
+    &__div {
+        z-index: 2;
+        color: $cinza;
+        display: grid;
+        gap: 2rem;
+        place-items: center;
+        border-radius: 1rem;
+        max-width: 70rem;
+        margin: 1rem 5rem;
+        text-align: center;
+
+        @include response(big) {
+            gap: 2rem;
+        }
+
+        @include response(big-small) {
+            margin: 0;
+            padding: 1rem;
+        }
+    }
+
+    &__titulo {
+        font-size: 3.2rem;
+        z-index: 3;
+        font-weight: 600;
+
+        &::after {
+            content: "";
+            width: 5rem;
+            height: 0.3rem;
+            background: $amarelo-escuro;
+            display: block;
+            margin: 0.5rem auto;
+            border-radius: 0.5rem;
+        }
+    }
+
+    &__paragrafo {
+        z-index: 3;
+        text-align: left;
+        line-height: 1.4;
+
+        @include response(big) {
+            font-size: 1.4rem;
+        }
+
+        @include response(big-small) {
+            text-align: center;
+        }
+    }
+
+    &.open {
+        & .sobre {
+            &__container {
+                transform: translateX(0%);
+            }
+
+            &__aviao {
+                left: -19dvw;
+
+                @include response(big) {
+                    left: -25dvw;
+                }
+                @include response(big-small) {
+                    left: -35dvw;
+                }
+                @include response(medium) {
+                    left: -40dvw;
+                }
+            }
+        }
+    }
+}
+
+.fim {
+    padding: 2rem;
+    position: relative;
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 25rem;
+    position: relative;
+    background-image: url("/jardim.gif");
+
+    @include response(big) {
+        height: 15rem;
+    }
+
+    &::after {
+        content: "";
+        animation: ruido 0.1s infinite linear;
+        background-image: url("/ruido.png");
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0.3;
+    }
+}
+
+.contato {
+    position: fixed;
+    margin: 1rem;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    background-color: $branco;
+    border: 1px solid $branco;
+    overflow: hidden;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem 0;
+    user-select: none;
+
+    &__container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0rem;
+        interpolate-size: allow-keywords;
+        transition: all 0.5s ease;
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    &__imagem {
+        font-size: 3.3rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        color: $cinza;
+        transition: all 0.5s ease;
+
+        &.plus {
+            padding: 0.5rem;
+            rotate: 0deg;
+            font-size: 3.3rem;
+        }
+
+        &:hover {
+            color: lighten($cinza, 20%);
+        }
+    }
+
+    &.open {
+        padding: 0.5rem 0rem;
+
+        & .plus {
+            transform: rotate(135deg);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: $vermelho;
+
+            &:hover {
+                color: lighten($vermelho, 10%);
+            }
+        }
+
+        & .contato {
+            &__container {
+                max-height: 10rem;
+            }
+
+            &__imagem {
+                padding: 0.5rem;
+            }
+        }
+    }
+}
+
+.projetos {
+    transition: all 1s ease-in-out;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    transform: translateX(110%);
+    width: 100vw;
+    height: 100dvh;
+    z-index: 5;
+    padding: 3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &__grid {
+        padding: 2rem;
+        display: grid;
+        gap: 5rem;
+        row-gap: 10rem;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include response(big) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include response(big-small) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @include response(medium) {
+            padding: 0rem;
+            gap: 3rem;
+        }
+    }
+
+    &__fechar {
+        transition: all 0.5s ease;
+        margin: 1rem 2rem;
+        position: absolute;
+        right: -100vw;
+        top: 0;
+        z-index: 15;
+        cursor: pointer;
+        font-size: 3.5rem;
+        color: $vermelho;
+        border-radius: 50%;
+
+        &:hover {
+            color: lighten($vermelho, 10%);
+        }
+    }
+}
+
+.pj {
+    & .projetos {
+        position: fixed;
+        transform: translateX(0%);
+
+        &__fechar {
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+    }
+}
+
+@keyframes letters {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes ruido {
+    0% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes flutuando {
+    0% {
+        transform: translateY(0%);
+    }
+    25% {
+        transform: translateY(1%);
+    }
+    50% {
+        transform: translateY(-1%);
+    }
+    75% {
+        transform: translateY(1%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes flutuando-y {
+    0% {
+        transform: translateY(0%);
+    }
+    25% {
+        transform: translateY(-1%);
+    }
+    50% {
+        transform: translateY(1%);
+    }
+    75% {
+        transform: translateY(-1%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes nuvens {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    50% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 50% 50%;
+    }
+}
