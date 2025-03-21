@@ -168,12 +168,12 @@ function Home() {
                 <div className="sobre__container">
                     <img
                         className="sobre__aviao"
-                        src="/aviao.png"
+                        src="./aviao.png"
                         alt="Imagem Avião"
                     />
                     <img
                         className="sobre__img"
-                        src="/minhaFoto.jpg"
+                        src="./minhaFoto.jpg"
                         alt="Imagem Edson Carvalho"
                     />
 
