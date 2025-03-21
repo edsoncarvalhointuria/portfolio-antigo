@@ -181,7 +181,7 @@ function Home() {
                         <h2 className="sobre__titulo">Sobre Mim</h2>
                         <img
                             className="sobre__img mobile"
-                            src="/minhaFoto.jpg"
+                            src="./minhaFoto.jpg"
                             alt="Imagem Edson Carvalho"
                         />
                         <p className="sobre__paragrafo">
