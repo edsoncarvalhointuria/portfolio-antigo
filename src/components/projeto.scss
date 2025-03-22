@@ -8,10 +8,16 @@
         display: grid;
         transition: all 0.4s ease;
         grid-template-rows: 11% 59% 30%;
-        animation: flutuando 8s ease-in-out infinite;
         text-decoration: none;
         user-select: none;
         cursor: pointer;
+
+        &.animation {
+            animation: flutuando 8s ease-in-out infinite;
+            &:nth-of-type(even) {
+                animation: flutuando-y 8s ease-in-out infinite;
+            }
+        }
 
         @include response(big-small) {
             height: 40rem;
@@ -29,7 +35,8 @@
                 }
 
                 &__item-body {
-                    border: 4px solid $azul-escuro;
+                    border-left: 4px solid $azul-escuro;
+                    border-right: 4px solid $azul-escuro;
                     &::after {
                         opacity: 1;
                     }
@@ -43,7 +50,6 @@
 
         &:nth-of-type(even) {
             top: 7%;
-            animation: flutuando-y 8s ease-in-out infinite;
             @include response(medium) {
                 top: 0;
             }
@@ -90,7 +96,8 @@
             background-size: 100%;
             position: relative;
             z-index: -1;
-            border: 4px solid $azul-claro;
+            border-left: 4px solid $azul-claro;
+            border-right: 4px solid $azul-claro;
             transition: all 0.4s ease;
 
             &::after {
