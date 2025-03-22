@@ -3,6 +3,7 @@ import "./projeto.scss";
 
 function Projeto({ img, titulo, desc, alt, link }) {
     const item = useRef(null);
+    const [isClick, setClick] = useState(false);
 
     useEffect(() => {
         const itemHeader = item.current.querySelector(".projetos__item-header");
@@ -14,6 +15,7 @@ function Projeto({ img, titulo, desc, alt, link }) {
             const posY = e.clientY;
             item.current.style.zIndex = 6;
             item.current.style.transition = "none";
+            setClick(true);
 
             const start = (ev) => {
                 item.current.style.left = ev.clientX - (posX - left) + "px";
@@ -21,6 +23,7 @@ function Projeto({ img, titulo, desc, alt, link }) {
             };
 
             const end = (ev) => {
+                setClick(false);
                 item.current.style.zIndex = 5;
                 item.current.style.transition = "all 0.4s ease";
 
@@ -41,10 +44,8 @@ function Projeto({ img, titulo, desc, alt, link }) {
             document.addEventListener("mouseup", end);
         });
         item.current.addEventListener("click", (e) => {
-            if (e.target !== itemHeader) {
+            if (e.target !== itemHeader && !isClick) {
                 window.open(link, "_blank");
-            } else {
-                e.preventDefault();
             }
         });
     }, []);
