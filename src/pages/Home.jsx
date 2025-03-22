@@ -113,6 +113,56 @@ const projetos = [
         desc: "Projeto explorando o Dialogflow na criação de um chatbot para uma lanchonete fictícia.",
         link: "https://dialog-flow-bot.streamlit.app/",
     },
+
+    {
+        img: "./ecommerce.png",
+        alt: "Imagem projeto Site Ecommerce",
+        titulo: "Simulação de Ecommerce - React",
+        desc: "Este projeto é uma implementação simplificada de um e-commerce.",
+        link: "https://edsoncarvalhointuria.github.io/EcommerceReact/#",
+    },
+    {
+        img: "./calculadora_investimentos.png",
+        alt: "Imagem projeto Site Calculadora de Investimentos",
+        titulo: "Calculadora de Investimentos - Javascript",
+        desc: "Projeto que simula progressão de investimentos com diferentes parâmetros.",
+        link: "https://fancy-kitsune-8c51a5.netlify.app/",
+    },
+    {
+        img: "./hashforms.png",
+        alt: "Imagem projeto Site Hashforms",
+        titulo: "HashForms - Javascript",
+        desc: "Projeto com o objetivo de praticar a validação de dados em formulários.",
+        link: "https://cerulean-puffpuff-3157f8.netlify.app/",
+    },
+    {
+        img: "./pagina_captura.png",
+        alt: "Imagem projeto Pagina de Captura",
+        titulo: "Página de Captura - HTML/CSS",
+        desc: "Página de captura para as inscrições do evento Python Impressionador.",
+        link: "https://gentle-capybara-19d854.netlify.app/",
+    },
+    {
+        img: "./pizzahash.png",
+        alt: "Imagem projeto Site Pizzahash",
+        titulo: "Pizzahash - HTML/CSS",
+        desc: "Este projeto simula uma homepage fictícia para uma pizzaria chamada PizzaHash.",
+        link: "https://bright-bombolone-024860.netlify.app/",
+    },
+    {
+        img: "./bootstrap.png",
+        alt: "Imagem projeto Pagina de Captura Bootstrap",
+        titulo: "Pagina de Captura - Bootstrap",
+        desc: "Este projeto é uma página de captura desenvolvida com Bootstrap.",
+        link: "https://extraordinary-naiad-204a32.netlify.app/",
+    },
+    {
+        img: "./playlist_films.png",
+        alt: "Imagem projeto Site Playlist de Filmes",
+        titulo: "Playlist de Filmes - Javascript",
+        desc: "Projeto explorando a API OMDb para salvar uma lista de filmes personalizada.",
+        link: "https://playlistfilmes.netlify.app/",
+    },
 ];
 
 function Home() {
