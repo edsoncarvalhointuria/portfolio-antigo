@@ -43,6 +43,8 @@ function Projeto({ img, titulo, desc, alt, link }) {
         item.current.addEventListener("click", (e) => {
             if (e.target !== itemHeader) {
                 window.open(link, "_blank");
+            } else {
+                e.preventDefault();
             }
         });
     }, []);
