@@ -45,6 +45,8 @@ function Projeto({ img, titulo, desc, alt, link }) {
             document.addEventListener("mouseup", end);
         });
         item.current.addEventListener("click", (e) => {
+            if (isClick) return;
+
             if (e.target !== itemHeader && !isClick) {
                 window.open(link, "_blank");
             }
