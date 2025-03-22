@@ -18,6 +18,7 @@ function Projeto({ img, titulo, desc, alt, link }) {
             setClick(true);
 
             const start = (ev) => {
+                setClick(true);
                 item.current.style.left = ev.clientX - (posX - left) + "px";
                 item.current.style.top = ev.clientY - (posY - top) + "px";
             };
