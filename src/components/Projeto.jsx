@@ -23,7 +23,7 @@ function Projeto({ img, titulo, desc, alt, link }) {
             };
 
             const end = (ev) => {
-                setTimeout(() => setClick(false), 10);
+                setTimeout(() => setClick(false), 100);
                 item.current.style.zIndex = 5;
                 item.current.style.transition = "all 0.4s ease";
 
